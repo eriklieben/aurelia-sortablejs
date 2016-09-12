@@ -51,13 +51,21 @@ export function configure(aurelia: Aurelia) {
 ```
 ## Usage:
 ```html
-<div sortable.bind="options" />
+<ul sortable.bind="options">
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
 ```
 
 Each event can be used in the following way:
 
 ```html
-<div sortable.bind="options" sortable-move.delegate="func($event)" />
+<ul sortable.bind="options" sortable-move.delegate="func($event)">
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+</ul>
 ```
 
 ```javascript
