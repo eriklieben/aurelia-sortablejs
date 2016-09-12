@@ -33,7 +33,7 @@ System.register(["aurelia-framework", "sortablejs"], function(exports_1, context
                         onRemove: function (event) { return _this.dispatch("on-remove", event); },
                         onSort: function (event) { return _this.dispatch("on-sort", event); },
                         onStart: function (event) { return _this.dispatch("on-start", event); },
-                        onUpdate: function (event) { return _this.dispatch("on-update", event); }
+                        onUpdate: function (event) { return _this.dispatch("on-update", event); },
                     };
                 }
                 SortableCustomAttribute.prototype.attached = function () {

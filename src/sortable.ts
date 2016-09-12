@@ -17,7 +17,7 @@ export class SortableCustomAttribute {
       onRemove: event => this.dispatch("on-remove", event),
       onSort: event => this.dispatch("on-sort", event),
       onStart: event => this.dispatch("on-start", event),
-      onUpdate: event => this.dispatch("on-update", event)
+      onUpdate: event => this.dispatch("on-update", event),
     };
 
   constructor(private element: Element) { }
