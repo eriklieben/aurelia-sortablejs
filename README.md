@@ -16,7 +16,7 @@ export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging()
-+    .plugin("aurelia-sortable");
++    .plugin("aurelia-sortablejs");
 ```
 ## Aurelia-CLI
 Install the package:
@@ -38,7 +38,7 @@ Open up the file ```aurelia_project/aurelia.json``` and add the following in the
 },
 ```
 Add the following line to ```src/main.js``` or ```src/main.ts```:
-```javascript
+```diff
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
