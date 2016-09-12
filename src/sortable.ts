@@ -1,33 +1,41 @@
-import { bindable, bindingMode, inject } from "aurelia-framework";
+import { inject } from "aurelia-framework";
 import * as Sortable from "sortablejs";
 
 @inject(Element)
 export class SortableCustomAttribute {
 
-  @bindable({ defaultBindingMode: bindingMode.oneTime })
-  public options;
-
   private sortable;
-
-  private defaultOptions = {
-      onAdd: event => this.dispatch("on-add", event),
-      onEnd:  event => this.dispatch("on-end", event),
-      onFilter: event => this.dispatch("on-filter", event),
-      onMove: event => this.dispatch("on-move", event),
-      onRemove: event => this.dispatch("on-remove", event),
-      onSort: event => this.dispatch("on-sort", event),
-      onStart: event => this.dispatch("on-start", event),
-      onUpdate: event => this.dispatch("on-update", event),
-    };
 
   constructor(private element: Element) { }
 
-  public attached() {
-    this.sortable = Sortable.create(this.element, Object.assign(this.defaultOptions, this.options || {}));
-  }
-
   public detached() {
     this.sortable.destroy();
+  }
+
+  public attached() {
+    if (!this.sortable) {
+      this.sortable = Sortable.create(this.element, {});
+    }
+  }
+
+  public valueChanged(newValue) {
+    if (this.sortable) {
+      this.sortable.destroy();
+    }
+
+    this.sortable = Sortable.create(this.element, Object.assign({}, newValue || {}));
+    this.attachListeners();
+  }
+
+  private attachListeners() {
+    Sortable.utils.on(this.element, "add", event => this.dispatch("sortable-add", event));
+    Sortable.utils.on(this.element, "end", event => this.dispatch("sortable-end", event));
+    Sortable.utils.on(this.element, "filter", event => this.dispatch("sortable-filter", event));
+    Sortable.utils.on(this.element, "move", event => this.dispatch("sortable-move", event));
+    Sortable.utils.on(this.element, "remove", event => this.dispatch("sortable-remove", event));
+    Sortable.utils.on(this.element, "sort", event => this.dispatch("sortable-sort", event));
+    Sortable.utils.on(this.element, "start", event => this.dispatch("sortable-start", event));
+    Sortable.utils.on(this.element, "update", event => this.dispatch("sortable-update", event));
   }
 
   private  dispatch(name, data) {

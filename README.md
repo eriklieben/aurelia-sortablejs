@@ -51,13 +51,13 @@ export function configure(aurelia: Aurelia) {
 ```
 ## Usage:
 ```html
-<div sortable="options.bind: options" />
+<div sortable.bind="options" />
 ```
 
 Each event can be used in the following way:
 
 ```html
-<div sortable="options.bind: options" on-move.delegate="func($event)" />
+<div sortable.bind="options" sortable-move.delegate="func($event)" />
 ```
 
 ```javascript
@@ -72,15 +72,13 @@ export class Home {
 ## sortable
 The following attributes can be set to catch events
 
-| Attribute  | Sortablejs event | Description 
-| ---------- | ---------------- | --------------
-| on-add     | onAdd            | Element is dropped into the list from another list
-| on-end     | onEnd            | Dragging ended 
-| on-filter  | onFilter         | Attempt to drag a filtered element
-| on-move    | onMove           | Event when you move an item in the list or between lists 
-| on-remove  | onRemove         | Element is removed from the list into another list 
-| on-sort    | onSort           | Called by any change to the list (add / update / remove) 
-| on-start   | onStart          | Dragging started 
-| on-update  | onUpdate         | Changed sorting within list
-
-When events are specified in the options property the override the above events.
+| Attribute        | Sortablejs event | Description 
+| ---------------- | ---------------- | --------------
+| sortable-add     | onAdd            | Element is dropped into the list from another list
+| sortable-end     | onEnd            | Dragging ended 
+| sortable-filter  | onFilter         | Attempt to drag a filtered element
+| sortable-move    | onMove           | Event when you move an item in the list or between lists 
+| sortable-remove  | onRemove         | Element is removed from the list into another list 
+| sortable-sort    | onSort           | Called by any change to the list (add / update / remove) 
+| sortable-start   | onStart          | Dragging started 
+| sortable-update  | onUpdate         | Changed sorting within list
