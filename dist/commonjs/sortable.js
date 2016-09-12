@@ -12,24 +12,33 @@ var aurelia_framework_1 = require("aurelia-framework");
 var Sortable = require("sortablejs");
 var SortableCustomAttribute = (function () {
     function SortableCustomAttribute(element) {
-        var _this = this;
         this.element = element;
-        this.defaultOptions = {
-            onAdd: function (event) { return _this.dispatch("on-add", event); },
-            onEnd: function (event) { return _this.dispatch("on-end", event); },
-            onFilter: function (event) { return _this.dispatch("on-filter", event); },
-            onMove: function (event) { return _this.dispatch("on-move", event); },
-            onRemove: function (event) { return _this.dispatch("on-remove", event); },
-            onSort: function (event) { return _this.dispatch("on-sort", event); },
-            onStart: function (event) { return _this.dispatch("on-start", event); },
-            onUpdate: function (event) { return _this.dispatch("on-update", event); },
-        };
     }
-    SortableCustomAttribute.prototype.attached = function () {
-        this.sortable = Sortable.create(this.element, Object.assign(this.defaultOptions, this.options || {}));
-    };
     SortableCustomAttribute.prototype.detached = function () {
         this.sortable.destroy();
+    };
+    SortableCustomAttribute.prototype.attached = function () {
+        if (!this.sortable) {
+            this.sortable = Sortable.create(this.element, {});
+        }
+    };
+    SortableCustomAttribute.prototype.valueChanged = function (newValue) {
+        if (this.sortable) {
+            this.sortable.destroy();
+        }
+        this.sortable = Sortable.create(this.element, Object.assign({}, newValue || {}));
+        this.attachListeners();
+    };
+    SortableCustomAttribute.prototype.attachListeners = function () {
+        var _this = this;
+        Sortable.utils.on(this.element, "add", function (event) { return _this.dispatch("sortable-add", event); });
+        Sortable.utils.on(this.element, "end", function (event) { return _this.dispatch("sortable-end", event); });
+        Sortable.utils.on(this.element, "filter", function (event) { return _this.dispatch("sortable-filter", event); });
+        Sortable.utils.on(this.element, "move", function (event) { return _this.dispatch("sortable-move", event); });
+        Sortable.utils.on(this.element, "remove", function (event) { return _this.dispatch("sortable-remove", event); });
+        Sortable.utils.on(this.element, "sort", function (event) { return _this.dispatch("sortable-sort", event); });
+        Sortable.utils.on(this.element, "start", function (event) { return _this.dispatch("sortable-start", event); });
+        Sortable.utils.on(this.element, "update", function (event) { return _this.dispatch("sortable-update", event); });
     };
     SortableCustomAttribute.prototype.dispatch = function (name, data) {
         this.element.dispatchEvent(new CustomEvent(name, {
@@ -37,10 +46,6 @@ var SortableCustomAttribute = (function () {
             detail: data,
         }));
     };
-    __decorate([
-        aurelia_framework_1.bindable({ defaultBindingMode: aurelia_framework_1.bindingMode.oneTime }), 
-        __metadata('design:type', Object)
-    ], SortableCustomAttribute.prototype, "options", void 0);
     SortableCustomAttribute = __decorate([
         aurelia_framework_1.inject(Element), 
         __metadata('design:paramtypes', [Element])

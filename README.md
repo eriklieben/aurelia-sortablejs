@@ -25,7 +25,7 @@ npm i aurelia-sortablejs sortablejs --save
 ```
 
 Open up the file ```aurelia_project/aurelia.json``` and add the following in the bundles, vender-bundle.js dependencies section:
-```diff
+```javascript
 {
   "name": "sortablejs",
   "path": "../node_modules/sortablejs/",
@@ -38,7 +38,7 @@ Open up the file ```aurelia_project/aurelia.json``` and add the following in the
 },
 ```
 Add the following line to ```src/main.js``` or ```src/main.ts```:
-```diff
+```javascript
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
