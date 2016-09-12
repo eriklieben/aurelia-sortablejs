@@ -7,7 +7,7 @@ export class SortableCustomAttribute {
   @bindable({ defaultBindingMode: bindingMode.oneTime })
   public options;
 
-  private sortable: Sortable;
+  private sortable;
 
   private defaultOptions = {
       onAdd: event => this.dispatch("on-add", event),
