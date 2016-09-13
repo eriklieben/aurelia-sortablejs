@@ -7,7 +7,7 @@ Aurelia plugin to use the [sortablejs](https://github.com/rubaxa/Sortable) libra
 ## JSPM
 Install the package:
 ```
-jspm i npm:aurelia-sortablejs
+jspm i aurelia-sortablejs
 ```
 
 Add the following line to ```src/main.js``` or ```src/main.ts```:
