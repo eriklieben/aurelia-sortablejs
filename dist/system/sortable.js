@@ -1,6 +1,5 @@
-System.register(["aurelia-framework", "sortablejs"], function(exports_1, context_1) {
+System.register(["aurelia-framework", "sortablejs"], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,17 +9,18 @@ System.register(["aurelia-framework", "sortablejs"], function(exports_1, context
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var aurelia_framework_1, Sortable;
-    var SortableCustomAttribute;
+    var __moduleName = context_1 && context_1.id;
+    var aurelia_framework_1, Sortable, SortableCustomAttribute;
     return {
-        setters:[
+        setters: [
             function (aurelia_framework_1_1) {
                 aurelia_framework_1 = aurelia_framework_1_1;
             },
             function (Sortable_1) {
                 Sortable = Sortable_1;
-            }],
-        execute: function() {
+            }
+        ],
+        execute: function () {
             SortableCustomAttribute = (function () {
                 function SortableCustomAttribute(element) {
                     this.element = element;
@@ -30,7 +30,7 @@ System.register(["aurelia-framework", "sortablejs"], function(exports_1, context
                 };
                 SortableCustomAttribute.prototype.attached = function () {
                     if (!this.sortable) {
-                        this.sortable = Sortable.create(this.element, {});
+                        this.sortable = Sortable.create(this.element, this.options);
                     }
                 };
                 SortableCustomAttribute.prototype.valueChanged = function (newValue) {
@@ -57,15 +57,19 @@ System.register(["aurelia-framework", "sortablejs"], function(exports_1, context
                         detail: data,
                     }));
                 };
-                SortableCustomAttribute = __decorate([
-                    aurelia_framework_1.inject(Element), 
-                    __metadata('design:paramtypes', [Element])
-                ], SortableCustomAttribute);
                 return SortableCustomAttribute;
             }());
+            __decorate([
+                aurelia_framework_1.bindable(),
+                __metadata("design:type", Object)
+            ], SortableCustomAttribute.prototype, "options", void 0);
+            SortableCustomAttribute = __decorate([
+                aurelia_framework_1.inject(Element),
+                __metadata("design:paramtypes", [Element])
+            ], SortableCustomAttribute);
             exports_1("SortableCustomAttribute", SortableCustomAttribute);
         }
-    }
+    };
 });
 
 //# sourceMappingURL=sortable.js.map

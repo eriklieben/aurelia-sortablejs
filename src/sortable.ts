@@ -1,10 +1,12 @@
-import { inject } from "aurelia-framework";
+import { bindable, inject } from "aurelia-framework";
 import * as Sortable from "sortablejs";
 
 @inject(Element)
 export class SortableCustomAttribute {
 
   private sortable;
+
+  @bindable() options;
 
   constructor(private element: Element) { }
 
@@ -14,7 +16,7 @@ export class SortableCustomAttribute {
 
   public attached() {
     if (!this.sortable) {
-      this.sortable = Sortable.create(this.element, {});
+      this.sortable = Sortable.create(this.element, this.options);
     }
   }
 
