@@ -13,14 +13,13 @@ var Sortable = require("sortablejs");
 var SortableCustomAttribute = (function () {
     function SortableCustomAttribute(element) {
         this.element = element;
-        this.sortableOptions = {};
     }
     SortableCustomAttribute.prototype.detached = function () {
         this.sortable.destroy();
     };
     SortableCustomAttribute.prototype.attached = function () {
         if (!this.sortable) {
-            this.sortable = Sortable.create(this.element, this.sortableOptions);
+            this.sortable = Sortable.create(this.element, this.options);
         }
     };
     SortableCustomAttribute.prototype.valueChanged = function (newValue) {
@@ -52,7 +51,7 @@ var SortableCustomAttribute = (function () {
 __decorate([
     aurelia_framework_1.bindable(),
     __metadata("design:type", Object)
-], SortableCustomAttribute.prototype, "sortableOptions", void 0);
+], SortableCustomAttribute.prototype, "options", void 0);
 SortableCustomAttribute = __decorate([
     aurelia_framework_1.inject(Element),
     __metadata("design:paramtypes", [Element])
