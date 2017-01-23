@@ -6,7 +6,7 @@ export class SortableCustomAttribute {
 
   private sortable;
 
-  @bindable() sortableOptions = {};
+  @bindable() options;
 
   constructor(private element: Element) { }
 
@@ -16,7 +16,7 @@ export class SortableCustomAttribute {
 
   public attached() {
     if (!this.sortable) {
-      this.sortable = Sortable.create(this.element, this.sortableOptions);
+      this.sortable = Sortable.create(this.element, this.options);
     }
   }
 
