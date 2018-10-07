@@ -1,4 +1,28 @@
+import face1 from './../static/face-01.jpg';
+import face2 from './../static/face-02.jpg';
+import face3 from './../static/face-03.jpg';
+import face4 from './../static/face-04.jpg';
+import face5 from './../static/face-05.jpg';
+import face6 from './../static/face-06.jpg';
+import face7 from './../static/face-07.jpg';
+import face8 from './../static/face-08.jpg';
+import face9 from './../static/face-09.jpg';
+import logo from './../static/logo.png';
+
 export class App {
+
+  public imageLogo = logo;
+  public imageFaces = [
+    face1,
+    face2,
+    face3,
+    face4,
+    face5,
+    face6,
+    face7,
+    face8,
+    face9
+  ];
 
   public itemList1 = ['item 1', 'item 2', 'item 3', 'item 4', 'item 5', 'item 6', 'item 7'];
   public itemList2 = ['item 8', 'item 9', 'item 10', 'item 11'];
