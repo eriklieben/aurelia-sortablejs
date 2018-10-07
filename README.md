@@ -24,19 +24,11 @@ Install the package:
 npm i aurelia-sortablejs sortablejs --save
 ```
 
-Open up the file ```aurelia_project/aurelia.json``` and add the following in the bundles, vender-bundle.js dependencies section:
-```javascript
-{
-  "name": "sortablejs",
-  "path": "../node_modules/sortablejs/",
-  "main": "sortable"
-},
-{
-  "name": "aurelia-sortablejs",
-  "path": "../node_modules/aurelia-sortablejs/dist/amd",
-  "main": "index"
-},
+Import the package in the Aurelia-CLI config
 ```
+au import aurelia-sortablejs
+```
+
 Add the following line to ```src/main.js``` or ```src/main.ts```:
 ```diff
 export function configure(aurelia: Aurelia) {

@@ -1,7 +1,8 @@
-import { inject } from "aurelia-framework";
+import { inject, customAttribute } from "aurelia-framework";
 import * as Sortable from "sortablejs";
 
 @inject(Element)
+@customAttribute("sortable")
 export class SortableCustomAttribute {
 
   private sortable;
@@ -44,8 +45,7 @@ export class SortableCustomAttribute {
       new CustomEvent(name, {
         bubbles: true,
         detail: data,
-      })
-    );
+      }));
   }
 }
 

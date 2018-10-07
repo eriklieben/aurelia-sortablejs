@@ -1,5 +1,5 @@
-import "./sortable";
+import { SortableCustomAttribute } from "./sortable";
 
 export function configure(config) {
-  config.globalResources("./sortable");
+  config.globalResources(SortableCustomAttribute);
 }
