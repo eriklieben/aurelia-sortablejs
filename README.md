@@ -66,8 +66,8 @@ Add the following line to ```src/main.js``` or ```src/main.ts```:
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .feature('resources')
-+    .plugin('aurelia-sortablejs');
+    .feature(PLATFORM.moduleName('resources'))
++   .plugin(PLATFORM.moduleName('aurelia-sortablejs'));
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
