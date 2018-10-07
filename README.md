@@ -4,24 +4,11 @@ Aurelia plugin to use the [sortablejs](https://github.com/rubaxa/Sortable) libra
 
 # Installation
 
-## JSPM
-Install the package:
-```
-jspm i aurelia-sortablejs
-```
+## Aurelia-CLI (RequireJS)
 
-Add the following line to ```src/main.js``` or ```src/main.ts```:
-```diff
-export function configure(aurelia) {
-  aurelia.use
-    .standardConfiguration()
-    .developmentLogging()
-+    .plugin("aurelia-sortablejs");
-```
-## Aurelia-CLI
 Install the package:
 ```
-npm i aurelia-sortablejs sortablejs --save
+npm i aurelia-sortablejs sortablejs -S
 ```
 
 Import the package in the Aurelia-CLI config
@@ -41,6 +28,52 @@ export function configure(aurelia: Aurelia) {
     aurelia.use.developmentLogging();
   }
 ```
+
+## Aurelia-CLI (SystemJS)
+
+Install the package:
+```
+npm i aurelia-sortablejs sortablejs -S
+```
+
+Import the package in the Aurelia-CLI config
+```
+au import aurelia-sortablejs
+```
+
+Add the following line to ```src/main.js``` or ```src/main.ts```:
+```diff
+export function configure(aurelia: Aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .feature('resources')
++    .plugin('aurelia-sortablejs');
+
+  if (environment.debug) {
+    aurelia.use.developmentLogging();
+  }
+```
+
+## Aurelia-CLI (Webpack)
+
+Install the package:
+```
+npm i aurelia-sortablejs sortablejs -S
+```
+
+Add the following line to ```src/main.js``` or ```src/main.ts```:
+```diff
+export function configure(aurelia: Aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .feature('resources')
++    .plugin('aurelia-sortablejs');
+
+  if (environment.debug) {
+    aurelia.use.developmentLogging();
+  }
+```
+
 ## Usage:
 ```html
 <ul sortable.bind="options">
