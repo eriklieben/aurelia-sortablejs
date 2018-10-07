@@ -31,6 +31,7 @@ define(["require", "exports", "aurelia-framework", "sortablejs"], function (requ
         SortableCustomAttribute.prototype.attachListeners = function () {
             var _this = this;
             Sortable.utils.on(this.element, "add", function (event) { return _this.dispatch("sortable-add", event); });
+            Sortable.utils.on(this.element, "choose", function (event) { return _this.dispatch("sortable-choose", event); });
             Sortable.utils.on(this.element, "end", function (event) { return _this.dispatch("sortable-end", event); });
             Sortable.utils.on(this.element, "filter", function (event) { return _this.dispatch("sortable-filter", event); });
             Sortable.utils.on(this.element, "move", function (event) { return _this.dispatch("sortable-move", event); });

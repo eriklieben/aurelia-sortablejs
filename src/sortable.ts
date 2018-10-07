@@ -29,6 +29,7 @@ export class SortableCustomAttribute {
 
   private attachListeners() {
     Sortable.utils.on(this.element, "add", event => this.dispatch("sortable-add", event));
+    Sortable.utils.on(this.element, "choose", event => this.dispatch("sortable-choose", event));
     Sortable.utils.on(this.element, "end", event => this.dispatch("sortable-end", event));
     Sortable.utils.on(this.element, "filter", event => this.dispatch("sortable-filter", event));
     Sortable.utils.on(this.element, "move", event => this.dispatch("sortable-move", event));
