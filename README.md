@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/erik/aurelia-sortablejs/_apis/build/status/eriklieben.aurelia-sortablejs)](https://dev.azure.com/erik/aurelia-sortablejs/_build/latest?definitionId=12)
+
 # aurelia-sortablejs
 
 Aurelia plugin to use the [sortablejs](https://github.com/rubaxa/Sortable) library.
