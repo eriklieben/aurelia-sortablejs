@@ -10,12 +10,7 @@ Aurelia plugin to use the [sortablejs](https://github.com/rubaxa/Sortable) libra
 
 Install the package:
 ```
-npm i aurelia-sortablejs sortablejs -S
-```
-
-Import the package in the Aurelia-CLI config
-```
-au import aurelia-sortablejs
+au install aurelia-sortablejs
 ```
 
 Add the following line to ```src/main.js``` or ```src/main.ts```:
@@ -35,12 +30,7 @@ export function configure(aurelia: Aurelia) {
 
 Install the package:
 ```
-npm i aurelia-sortablejs sortablejs -S
-```
-
-Import the package in the Aurelia-CLI config
-```
-au import aurelia-sortablejs
+au install aurelia-sortablejs
 ```
 
 Add the following line to ```src/main.js``` or ```src/main.ts```:
@@ -60,7 +50,7 @@ export function configure(aurelia: Aurelia) {
 
 Install the package:
 ```
-npm i aurelia-sortablejs sortablejs -S
+yarn add aurelia-sortablejs
 ```
 
 Add the following line to ```src/main.js``` or ```src/main.ts```:

@@ -10,11 +10,12 @@
     "serve": "http-server -c-1 -p 1234",
     "cypress:open": "cypress open",
     "test-e2e": "concurrently --kill-others \"npm run serve\" \"npm run cypress:open\""
-  },  
+  },
   "license": "MIT",
   "dependencies": {
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.2.0",
+    "aurelia-sortablejs": "^1.1.0",
     "bluebird": "^3.5.1",
     "sortablejs": "^1.7.0",
     "systemjs": "^0.21.0",

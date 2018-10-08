@@ -1,0 +1,31 @@
+<template>
+	<!-- Multi connected lists -->
+	<a name="m"></a>
+	<div class="container">
+		<div id="multi" style="margin-left: 30px" sortable.bind="sortableOption">
+			<div><div data-force="5" class="layer title title_xl">Multi</div></div>
+
+			<div class="layer tile" data-force="30">
+				<div class="tile__name">Group A</div>
+				<div class="tile__list" sortable.bind="sortableOption" id="groupA">
+					<img repeat.for="imgUrl of groupA" src.bind="imgUrl" data-test="list-group-a-${$index}" />
+				</div>
+			</div>
+
+			<div class="layer tile" data-force="25">
+				<div class="tile__name">Group B</div>
+				<div class="tile__list" sortable.bind="sortableOption" id="groupB">
+          <img repeat.for="imgUrl of groupB" src.bind="imgUrl" data-test="list-group-b-${$index}" />
+				</div>
+			</div>
+
+			<div class="layer tile" data-force="20">
+				<div class="tile__name">Group C</div>
+				<div class="tile__list" sortable.bind="sortableOption" id="groupC">
+          <img repeat.for="imgUrl of groupC" src.bind="imgUrl" data-test="list-group-c-${$index}" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+</template>

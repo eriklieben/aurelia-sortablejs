@@ -1,5 +1,6 @@
 import {Aurelia} from 'aurelia-framework'
 import environment from './environment';
+import logger from './logger';
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
@@ -8,7 +9,7 @@ export function configure(aurelia: Aurelia) {
     .plugin("aurelia-sortablejs");
 
   if (environment.debug) {
-    aurelia.use.developmentLogging();
+    logger();
   }
 
   if (environment.testing) {
@@ -17,3 +18,4 @@ export function configure(aurelia: Aurelia) {
 
   return aurelia.start().then(() => aurelia.setRoot());
 }
+

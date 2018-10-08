@@ -1,3 +1,15 @@
-jspm_packages
-bower_components
+.vscode
 .idea
+jspm_packages
+examples
+src
+test
+.editorconfig
+azure-pipelines.yml
+build
+gulpfile.js
+ISSUE_TEMPLATE.md
+karma.conf.js
+tsconfig.json
+tslint.json
+typings.json

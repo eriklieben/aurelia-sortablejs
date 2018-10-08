@@ -1,0 +1,26 @@
+<template>
+	<!-- Connected lists -->
+	<div class="container" style="height: 520px">
+		<div data-force="30" class="layer block" style="left: 14.5%; top: 0; width: 37%">
+			<div class="layer title">List A</div>
+			
+      <ul id="listA" class="block__list block__list_words" 
+        sortable.bind="sortableOptions"
+        data-item-list="itemList1">
+				<li repeat.for="item of itemList1" data-test="itemList1-${$index}">${item}</li>
+			</ul>
+
+		</div>
+
+		<div data-force="18" class="layer block" style="left: 58%; top: 143px; width: 40%;">
+			<div class="layer title">List B</div>
+			
+      <ul id="listB" class="block__list block__list_tags" 
+        sortable.bind="sortableOptions"
+        data-item-list="itemList2">
+        <li repeat.for="item of itemList2" data-test="itemList2-${$index}">${item}</li>
+			</ul>
+
+		</div>
+	</div>
+</template>

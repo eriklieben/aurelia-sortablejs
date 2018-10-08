@@ -1,0 +1,17 @@
+<template>
+	<!-- Editable list -->
+	<a name="e"></a>
+	<div class="container" style="margin-top: 100px">
+		<div id="filter" style="margin-left: 30px">
+			<div><div data-force="5" class="layer title title_xl">Editable list</div></div>
+
+			<div style="margin-top: -8px; margin-left: 10px" class="block__list block__list_words">
+				<ul id="editable" sortable.bind="sortableOptions">
+					<li repeat.for="user of users">${user}<i class="js-remove">✖</i></li>
+				</ul>
+
+				<button click.delegate="addUser()">Add</button>
+			</div>
+		</div>
+	</div>
+</template>
